@@ -8,20 +8,21 @@ from handlers import handle_message_logic
 from parse_update import parse_update
 
 init_logger()
-logger = logging.getLogger(__name__)
 
+logger = logging.getLogger(__name__)
+logger.info ("Запуск сервера")
 
 
 app = FastAPI()
 @app.post("/webhook")
 async def handle_webhook(request: Request) -> JSONResponse:
-    logger.info(f"Получен вебхук. Количество обновлений: {len(payload.updates)}")
+    
     try:
         payload = await request.json()
     except Exception as e:
         logger.error("Invalid JSON: %s", e)
         return JSONResponse(status_code=200, content={"status": "ok", "handled": False, "error": "invalid_json"})
-
+    
     logger.info("=== ВХОДЯЩИЙ ВЕБХУК ===")
     logger.info(payload)
     from_data = payload.get("updates", [{}])[0].get("from", {})
@@ -90,4 +91,5 @@ async def handle_webhook(request: Request) -> JSONResponse:
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)

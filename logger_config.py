@@ -18,8 +18,12 @@ def init_logger():
     console_handler.setLevel(logging.INFO) # В консоли смотрим только важные логи (INFO и выше)
     
     # Короткий формат для консоли: [УРОВЕНЬ] Сообщение
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )    
     console_formatter = logging.Formatter("[%(levelname)s] %(message)s")
-    console_handler.setFormatter(console_formatter)        
+    console_handler.setFormatter(formatter)        
 
     # 3. НАСТРОЙКА ЗАПИСИ В ФАЙЛ
     # encoding="utf-8" обязателен, чтобы кириллица в файле не превратилась в иероглифы

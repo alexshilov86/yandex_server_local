@@ -1,0 +1,46 @@
+2026-07-12 18:01:45 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:02:41 [INFO] __main__: Запуск сервера
+2026-07-12 18:02:42 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:02:42 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:02:42 [INFO] server: Запуск сервера
+2026-07-12 18:02:53 [INFO] __main__: Запуск сервера
+2026-07-12 18:02:54 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:02:54 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:02:54 [INFO] server: Запуск сервера
+2026-07-12 18:06:07 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:06:07 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:06:07 [INFO] server: Запуск сервера
+2026-07-12 18:06:15 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:06:15 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:06:15 [INFO] server: Запуск сервера
+2026-07-12 18:06:35 [INFO] __main__: Запуск сервера
+2026-07-12 18:06:36 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:06:36 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:06:36 [INFO] server: Запуск сервера
+2026-07-12 18:11:06 [INFO] __main__: Запуск сервера
+2026-07-12 18:22:24 [INFO] __main__: Запуск сервера
+2026-07-12 18:25:18 [INFO] __main__: Запуск сервера
+2026-07-12 18:25:19 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:25:19 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:25:19 [INFO] server: Запуск сервера
+2026-07-12 18:25:29 [INFO] server: === ВХОДЯЩИЙ ВЕБХУК ===
+2026-07-12 18:25:29 [INFO] server: {'updates': [{'from': {'login': 'avshilov995', 'id': '8cdbb306-2ef5-92cb-796d-65179fd679cc', 'display_name': 'Александр Шилов', 'robot': False}, 'chat': {'type': 'private', 'id': '23208209-4a77-9fd8-5064-77aeffd34a20_8cdbb306-2ef5-92cb-796d-65179fd679cc'}, 'text': 'накладная 26-10531005882', 'timestamp': 1783850113, 'message_id': 1783850113344034, 'payload_id': 'a4eadbe6-370f-7f7b-be9fd9f1', 'update_id': 1783850113344034}]}
+2026-07-12 18:25:29 [INFO] server: Получено сообщение: login=avshilov995, name=Александр Шилов, text='накладная 26-10531005882'
+2026-07-12 18:25:29 [INFO] server: Обрабатываем update #0: chat_id=23208209-4a77-9fd8-5064-77aeffd34a20_8cdbb306-2ef5-92cb-796d-65179fd679cc user_id=8cdbb306-2ef5-92cb-796d-65179fd679cc text=накладная 26-10531005882
+2026-07-12 18:26:26 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:26:26 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:26:26 [INFO] server: Запуск сервера
+2026-07-12 18:26:41 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:26:42 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:26:42 [INFO] server: Запуск сервера
+2026-07-12 18:26:44 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:8000
+2026-07-12 18:26:44 [INFO] server: === ВХОДЯЩИЙ ВЕБХУК ===
+2026-07-12 18:26:44 [INFO] server: {'updates': [{'from': {'login': 'avshilov995', 'id': '8cdbb306-2ef5-92cb-796d-65179fd679cc', 'display_name': 'Александр Шилов', 'robot': False}, 'chat': {'type': 'private', 'id': '23208209-4a77-9fd8-5064-77aeffd34a20_8cdbb306-2ef5-92cb-796d-65179fd679cc'}, 'text': 'накладная 26-10531005882', 'timestamp': 1783850113, 'message_id': 1783850113344034, 'payload_id': 'a4eadbe6-370f-7f7b-be9fd9f1', 'update_id': 1783850113344034}]}
+2026-07-12 18:26:44 [INFO] server: Получено сообщение: login=avshilov995, name=Александр Шилов, text='накладная 26-10531005882'
+2026-07-12 18:26:44 [INFO] server: Обрабатываем update #0: chat_id=23208209-4a77-9fd8-5064-77aeffd34a20_8cdbb306-2ef5-92cb-796d-65179fd679cc user_id=8cdbb306-2ef5-92cb-796d-65179fd679cc text=накладная 26-10531005882
+2026-07-12 18:26:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:8000 "POST /webhook HTTP/1.1" 200 230
+2026-07-12 18:26:44 [INFO] __main__: Запрос успешно выполнен. Статус ответа: 200
+2026-07-12 18:26:44 [INFO] __main__: {'status': 'ok', 'handled_count': 1, 'errors_count': 0, 'details': [{'update_index': 0, 'status': 'handled', 'chat_id': '23208209-4a77-9fd8-5064-77aeffd34a20_8cdbb306-2ef5-92cb-796d-65179fd679cc', 'reply': 'НАКЛАДНАЯ 26-10531005882'}]}
+2026-07-12 18:27:07 [INFO] __mp_main__: Запуск сервера
+2026-07-12 18:27:07 [DEBUG] asyncio: Using selector: SelectSelector
+2026-07-12 18:27:07 [INFO] server: Запуск сервера
