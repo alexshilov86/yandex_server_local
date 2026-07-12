@@ -6,14 +6,35 @@ import logging
 from logger_config import init_logger
 from handlers import handle_message_logic
 from parse_update import parse_update
+from apscheduler.schedulers.background import BackgroundScheduler
+from contextlib import asynccontextmanager
+from data_from_base_update import update_data_from_base
 
 init_logger()
-
 logger = logging.getLogger(__name__)
 logger.info ("Запуск сервера")
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # --- ЭТОТ КОД СРАБАТЫВАЕТ ПРИ СТАРТЕ СЕРВЕРА ---
+    # BackgroundScheduler работает в отдельном фоновом потоке
+    scheduler = BackgroundScheduler()
+    
+    # Добавляем задачу: вызывать update_base каждые 3 часа
+    # Для теста перед продакшеном можете заменить hours=3 на seconds=30
+    scheduler.add_job(update_data_from_base, 'interval', hours=3)
+    
+    # Запускаем планировщик
+    scheduler.start()
+    logger.info("📅 Планировщик задач запущен: обновление базы настроено на каждые 3 часа.")
+    
+    yield # В этой точке сервер начинает принимать запросы пользователей
+    
+    # --- ЭТОТ КОД СРАБАТЫВАЕТ ПРИ ВЫКЛЮЧЕНИИ СЕРВЕРА ---
+    scheduler.shutdown()
+    logger.info("📅 Планировщик задач успешно остановлен.")
 
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 @app.post("/webhook")
 async def handle_webhook(request: Request) -> JSONResponse:
     
@@ -88,6 +109,9 @@ async def handle_webhook(request: Request) -> JSONResponse:
     }
 
     return JSONResponse(status_code=200, content=result)            
+# Создаем lifespan-обработчик для FastAPI
+
+
 
 if __name__ == "__main__":
     import uvicorn
