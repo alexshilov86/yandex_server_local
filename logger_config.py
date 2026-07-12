@@ -1,9 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
 
-
-
-
 def init_logger():
     LOG_FILE = "bot_server.log"
     # 1. Получаем корневой (главный) логгер всего приложения
