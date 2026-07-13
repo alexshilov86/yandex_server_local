@@ -1,4 +1,8 @@
 from typing import Dict, Any
+import logging
+from logger_config import init_logger
+init_logger()
+logger = logging.getLogger(__name__)
 
 async def handle_message_logic(parsed: Dict[str, Any]) -> str:
     """

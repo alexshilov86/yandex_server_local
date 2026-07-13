@@ -1,6 +1,9 @@
 # модуль для обработки входящих данных
 import logging
 from typing import Dict, Any
+
+from logger_config import init_logger
+init_logger()
 logger = logging.getLogger(__name__)
 
 def parse_update(update: Dict[str, Any]) -> Dict[str, Any] | None:
