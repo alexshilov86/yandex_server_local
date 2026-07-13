@@ -24,4 +24,5 @@ except requests.exceptions.Timeout as timeout_err:
 # 4. Перехватываем любые другие непредвиденные ошибки requests
 except requests.exceptions.RequestException as general_err:
         logger.error(f"Произошла непредвиденная ошибка при запросе: {general_err}")
-logger.info(response.json())
+response_json = response.json()
+logger.info(response_json['details'][0]['reply'])
